@@ -26,7 +26,7 @@ package recurrence;
  *  	RETURN (max-left, max-right, left-sum+right-sum)
  */
 public class MaxSumSubArray {
-	public void MaxSumSubArrayCross(int[] A, int arrayStartIndex, int arrayLastIndex) {
+	public int MaxSumSubArrayCross(int[] A, int arrayStartIndex, int arrayLastIndex) {
 		// TODO Auto-generated constructor stub
 		int midOfArray = (arrayStartIndex+arrayLastIndex)/2;
 		int maxLeftIndex = 0, maxRightIndex = 0;
@@ -76,16 +76,60 @@ public class MaxSumSubArray {
 			System.out.print(A[k]+" ");
 		}
 		System.out.println("\nMax Sum is :"+(left_sum+right_sum));
+		return left_sum+right_sum;
 	}
 	
-	public void FindMaxSubArray(int arrayOfInt[], int startIndex, int lowIndex){
+	public int FindMaxSubArrayLeft(int A[], int startIndex, int endIndex){
 		
+		int midOfArray = (startIndex+endIndex)/2;
+		int maxLeftIndex = 0, maxRightIndex = midOfArray;
+		int left_sum = Integer.MIN_VALUE;
+		
+		int sum = 0;
+		for (int i = maxLeftIndex; i <= maxRightIndex; i++){
+			sum = sum + A[i];
+			if (sum > left_sum){
+				left_sum = sum;
+				maxLeftIndex = i;				
+			}else{
+				sum = sum - A[i];
+			}
+		}
+		return sum;
+	}
+	
+	public int FindMaxSubArrayRight(int A[], int startIndex, int endIndex){
+
+		int midOfArray = (startIndex+endIndex)/2;
+		int maxLeftIndex = midOfArray+1, maxRightIndex = endIndex;
+		int right_sum = Integer.MIN_VALUE;
+		
+		int sum = 0;
+		for (int i = maxLeftIndex; i <= maxRightIndex; i++){
+			sum = sum + A[i];
+			if (sum > right_sum){
+				right_sum = sum;
+				maxLeftIndex = i;				
+			}else{
+				sum = sum - A[i];
+			}
+		}
+		return sum;
 	}
 	
 	public static void main(String args[]){
 		int testArray[] = {10,90,-23,-1,3,4};
 		MaxSumSubArray test1 = new MaxSumSubArray();
-		test1.MaxSumSubArrayCross(testArray, 0, testArray.length-1);
+		int highestCrossValue = test1.MaxSumSubArrayCross(testArray, 0, testArray.length-1);
+		int highestLeftValue = test1.FindMaxSubArrayLeft(testArray, 0, testArray.length-1);
+		int highestRightValue = test1.FindMaxSubArrayRight(testArray, 0, testArray.length-1);
 		
+		if(highestCrossValue > highestLeftValue & highestCrossValue > highestRightValue){
+			System.out.println("Highest value is across the array: "+highestCrossValue);
+		}else if(highestLeftValue > highestRightValue){
+			System.out.println("Highest Value is from Left Sub Array: "+highestLeftValue);
+		}else{
+			System.out.println("Highest value is from Right Sub Array: "+highestRightValue);
+		}
 	}
 }

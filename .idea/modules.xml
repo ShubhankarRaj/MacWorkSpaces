@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/CodeChef/CodeChef.iml" filepath="$PROJECT_DIR$/CodeChef/CodeChef.iml" />
+      <module fileurl="file://$PROJECT_DIR$/CoremanAlgos/CoremanAlgos.iml" filepath="$PROJECT_DIR$/CoremanAlgos/CoremanAlgos.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Mah1stWebSite/Mah1stWebSite.iml" filepath="$PROJECT_DIR$/Mah1stWebSite/Mah1stWebSite.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SelfPracto/SelfPracto.iml" filepath="$PROJECT_DIR$/SelfPracto/SelfPracto.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cs/cs.iml" filepath="$PROJECT_DIR$/cs/cs.iml" />
+    </modules>
+  </component>
+</project>
