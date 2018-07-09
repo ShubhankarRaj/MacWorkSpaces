@@ -30,6 +30,7 @@ public class LongestArithmeticProgression {
 				}
 			}
 		}
+		return 0;
 		
 	}
 }

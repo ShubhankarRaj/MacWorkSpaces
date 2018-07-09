@@ -34,9 +34,9 @@ public class PreOrderTraversalToBST {
 	class BinaryTree{
 		Index index = new Index();
 		
-		Node constructTreeFromPreOrderTraversalAndReturnRoot(int[] preOrder, int sizeOfArray){
+		/*Node constructTreeFromPreOrderTraversalAndReturnRoot(int[] preOrder, int sizeOfArray){
 			
-		}
+		}*/
 		
 	}
 	
@@ -45,6 +45,6 @@ public class PreOrderTraversalToBST {
 		BinaryTree tree = potToBST.new BinaryTree();
 		int pre[] = new int[]{12,10,5,1,3,11,25,23,26};
 		int size = pre.length;
-		//Node root
+
 	}
 }
