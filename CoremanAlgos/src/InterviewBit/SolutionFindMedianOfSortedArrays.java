@@ -66,32 +66,11 @@ public class SolutionFindMedianOfSortedArrays {
         List<Integer> firstArr = new ArrayList<>();
         List<Integer> secArr = new ArrayList<>();
 
-        firstArr.add(0); firstArr.add(23); /*firstArr.add(9); firstArr.add(10); firstArr.add(52);*/
-//        secArr.add(-1); secArr.add(11); secArr.add(20); secArr.add(100);
+        firstArr.add(0); firstArr.add(23); firstArr.add(9); firstArr.add(10); firstArr.add(52);
+        secArr.add(-1); secArr.add(11); secArr.add(20); secArr.add(100);
 
         double median = sol.findMedianSortedArrays(firstArr, secArr);
         System.out.println(median);
     }
 
-    public int findMidIndexOfFirstArray(List<Integer> input){
-        if(input.size()%2 == 0){
-            return input.size()/2 - 1;
-        }else{
-            return input.size()/2;
-        }
-    }
-
-    public int findMidIndexOfSecondArray(int sizeOfFirstArray, int currentMidPointOfFirst, List<Integer> input){
-        if((sizeOfFirstArray + input.size()) % 2 == 0){
-            if((sizeOfFirstArray + input.size())/2 - (currentMidPointOfFirst + 1) - 1 >= 0)
-                return (sizeOfFirstArray + input.size())/2 - (currentMidPointOfFirst + 1) - 1;
-            else
-                return - 1;
-        }else{
-            if(((sizeOfFirstArray + input.size() + 1)/2 - (currentMidPointOfFirst + 1)) - 1 >= 0)
-                return ((sizeOfFirstArray + input.size() + 1)/2 - (currentMidPointOfFirst + 1)) - 1;
-            else
-                return -1;
-        }
-    }
 }
