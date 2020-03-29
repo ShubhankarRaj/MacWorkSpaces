@@ -9,6 +9,8 @@ public class Solution {
     public static int clockToMinutes(String s) {
         int t = 0;
         t += 60 * Integer.parseInt(s.substring(0, 2));
+
+
         t += Integer.parseInt(s.substring(3, 5));
         return t;
     }
